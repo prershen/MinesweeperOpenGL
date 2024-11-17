@@ -7,10 +7,12 @@ The main objective of this project is to use OpenGL functions to implement a sin
 ## Gameplay
 
 Minesweeper mines are scattered throughout a board, which is divided into cells. Cells have three states: 
-Uncovered (exposed)
-Covered (blank and clickable)
-Flagged ( marked by the player to indicate a potential mine location) 
+* Uncovered (exposed)
+* Covered (blank and clickable)
+* Flagged ( marked by the player to indicate a potential mine location)
+
 A player left-clicks a cell to uncover it. If a player uncovers a mined cell, the game ends, as there is only 1 life per game. Otherwise, the uncovered cells display either a number, indicating the quantity of mines adjacent to it, or a blank tile (or "0"), and all adjacent non-mined cells will automatically be uncovered. Right-clicking on a cell will flag it, causing a flag to appear on it. Flagged cells are still considered covered, and a player can click on them to uncover them, although typically they must first be unflagged with an additional right-click.
+
 To win the game, players must uncover all non-mine cells, at which point, the timer is stopped. 
 
 
@@ -18,26 +20,34 @@ To win the game, players must uncover all non-mine cells, at which point, the ti
 ## Methodology 
 
 It initiates the board using simple graphics and opengl function
+
 Input is given using the mouse and the click decides which cell the user wants to uncover
+
 Cell structure is used to store the status of each cell and its content can have any of - 0 (blank),1-8 (adjacent mines),-1 (mine) and the content is updated after initiation
+
 Game_stats variable is used to store the state of the game and the result of the actions
+
 Mine cells are decided randomly at initiation and upon clicking this, it ends the game and the user loses
+
 Uncovering a non mine cell leads to a recursion call to uncovering all neighbouring cells that are safe
+
 When the uncovered cells in the end are the same as the number of mines, the game ends and the user wins.
 
 
 ## Scope
 
-It will help users to gain the cognitive asset of making inferences out of visual based system
+It will help users to gain the cognitive asset of making inferences out of visual based system. 
 It helps users in enhancing their hypothetical thinking.
 It is also being developed on a 3D platform for more interactiveness.
-2. Requirement Specifications 
 
 ## Software Requirements 
 
 Operating System- Windows 10/MacOS
+
 Tool - Visual Studio
+
 Language- C++ 
+
 Library- OpenGL (glut 3.7.6) 
 
 ## System Design and Implementation 
